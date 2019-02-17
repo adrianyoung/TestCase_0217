@@ -38,6 +38,7 @@ class TestFunc(unittest.TestCase):
         self.assertEqual(max([1, 3, -9], [1, 2, -4]), max_([1, 3, -9], [1, 2, -4]))
         self.assertEqual(max({'a':1, 'b':3, 'c':-9}), max_({'a':1, 'b':3, 'c':-9}))
         # 前置处理
+        self.assertEqual(max([1, 3, -9], key=abs), max_([1, 3, -9], key=abs))
         self.assertEqual(max(1, 3, -9, key=abs), max_(1, 3, -9, key=abs))
         dic = {'a':1, 'b':3, 'c':-9}
         self.assertEqual(max(dic, key=dic.get), max_(dic, key=dic.get))
@@ -61,6 +62,7 @@ class TestFunc(unittest.TestCase):
         # 单参数对象不可迭代
         self.assertRaisesRegexp(TypeError,"object is not iterable", max_, 1)
         # 前置方法无效
+        self.assertRaisesRegexp(TypeError,"object is not callable", max_, [1, 3, -9], key=1)
         self.assertRaisesRegexp(TypeError,"object is not callable", max_, 1, 3, -9, key=1)
         # 多参数不可设置默认
         self.assertRaisesRegexp(TypeError,"Cannot specify a default for .+ with multiple positional arguments", max_, 1, 3, -9, default=0)
@@ -75,8 +77,6 @@ if __name__ == "__main__":
     runner = unittest.TextTestRunner(verbosity=2)
     runner.run(suite)
 
-    # with open('test_report.txt', 'w') as fp:
+    # with open('report.txt', 'a') as fp:
     #     runner = unittest.TextTestRunner(stream=fp, verbosity=2)
     #     runner.run(suite)
-
-

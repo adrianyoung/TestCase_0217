@@ -95,26 +95,3 @@ def iter_check(obj):
             idx = pos+1
     return idx
 
-if __name__ == "__main__":
-
-    max_(1,5,8,7,-9, key=abs)
-
-    # max()
-    # max(key=abs)
-    # max(default='a')
-
-    # max(1)
-    # max(1, default='a')
-    # max(1, key=lambda x:-x)
-    # max(1, key=1)
-
-    # max(())
-    # max('')
-
-    # max(1,2,3,default='aaa')
-
-    # max(1,-5, abc=abs)
-
-    # max([1,2,'3'], default='a')
-    # max(1,2,'3')
-    # max([1,2], (1,4))
