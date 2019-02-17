@@ -97,7 +97,6 @@ def iter_check(obj):
 
 if __name__ == "__main__":
 
-    max_(1)
     max_(1,5,8,7,-9, key=abs)
 
     # max()

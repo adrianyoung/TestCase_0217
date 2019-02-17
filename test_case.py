@@ -72,11 +72,11 @@ if __name__ == "__main__":
     suite.addTest(TestFunc("test_no_name_"))
     suite.addTest(TestFunc("test_max_"))
 
-    #runner = unittest.TextTestRunner(verbosity=2)
-    #runner.run(suite)
+    runner = unittest.TextTestRunner(verbosity=2)
+    runner.run(suite)
 
-    with open('test_report.txt', 'w') as fp:
-        runner = unittest.TextTestRunner(stream=fp, verbosity=2)
-        runner.run(suite)
+    # with open('test_report.txt', 'w') as fp:
+    #     runner = unittest.TextTestRunner(stream=fp, verbosity=2)
+    #     runner.run(suite)
 
 
