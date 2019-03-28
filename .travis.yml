@@ -6,6 +6,10 @@ after_success:
 branches: 
   only: 
     - master
+install:
+  - pip install coverage
+  - pip install codecov
+  - pip install coveralls
 ignore_changes: 
   - README.md
   - .gitignore
