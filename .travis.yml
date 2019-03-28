@@ -1,0 +1,29 @@
+language: python
+sudo: false
+python:
+    - "3.6"
+
+ignore_changes:
+  - *.md
+  - .gitignore
+
+services:
+
+cache:
+
+before_install:
+
+install:
+
+script:
+  - coverage run test_case.py 
+
+branches:
+  only:
+    - master
+
+after_success:
+    - coverage combine
+    - codecov
+    - coveralls
+
