@@ -7,14 +7,6 @@ ignore_changes:
   - *.md
   - .gitignore
 
-services:
-
-cache:
-
-before_install:
-
-install:
-
 script:
   - coverage run test_case.py 
 
