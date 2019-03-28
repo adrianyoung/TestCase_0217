@@ -1,21 +1,17 @@
-language: python
-sudo: false
-python:
-    - "3.6"
-
-ignore_changes:
-  - *.md
-  - .gitignore
-
-script:
-  - coverage run test_case.py 
-
-branches:
-  only:
+--- 
+after_success: 
+  - "coverage combine"
+  - codecov
+  - coveralls
+branches: 
+  only: 
     - master
-
-after_success:
-    - coverage combine
-    - codecov
-    - coveralls
-
+ignore_changes: 
+  - README.md
+  - .gitignore
+language: python
+python: 
+  - "3.6"
+script: 
+  - "coverage run test_case.py"
+sudo: false
